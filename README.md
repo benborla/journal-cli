@@ -1,6 +1,6 @@
 ![Journal CLI](https://media.dev.to/dynamic/image/width=1000,height=420,fit=cover,gravity=auto,format=auto/https%3A%2F%2Fdev-to-uploads.s3.amazonaws.com%2Fuploads%2Farticles%2Fexvv2fzath1e63zfdx44.png)
 
-# Daily Journal Bash Script
+# Journal CLI
 
 A simple, customizable bash script for managing daily journal entries from the command line.
 
