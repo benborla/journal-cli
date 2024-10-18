@@ -58,6 +58,7 @@ journal
 - `journal --list`: List all journal entries
 - `journal --set-journal-dir [DIR]`: Set custom journal directory
 - `journal --set-editor [EDITOR]`: Set preferred text editor
+- `journal --list-config`: Prints all the set configuration
 - `journal --edit-config`: Edit the configuration file directly
 - `journal --help`: Display help message
 - `journal --version`: Display version information
