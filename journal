@@ -37,6 +37,20 @@ EOF
   echo "Configuration saved to $CONFIG_FILE"
 }
 
+edit_config() {
+  if [[ ! -f "$CONFIG_FILE" ]]; then
+    save_config
+  fi
+
+  $EDITOR "$CONFIG_FILE"
+  echo "Configuration file edited. Reloading settings..."
+  load_config
+  echo "Settings reloaded. Current configuration:"
+  echo "JOURNAL_DIR=$JOURNAL_DIR"
+  echo "DATE_FORMAT=$DATE_FORMAT"
+  echo "EDITOR=$EDITOR"
+}
+
 # Function to display usage information
 show_help() {
   cat <<EOF
@@ -241,6 +255,10 @@ main() {
         show_help
         exit 1
       fi
+      ;;
+    --edit-config)
+      edit_config
+      exit
       ;;
     --*)
       echo "Error: Unknown option $1" >&2
