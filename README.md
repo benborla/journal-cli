@@ -31,6 +31,8 @@ A simple, customizable bash script for managing daily journal entries from the c
    mv journal /usr/local/bin/journal
    ```
 
+   Note: You can rename the script to whatever you prefer (e.g., `daily-log`, `my-journal`, etc.) to avoid naming conflicts or to better suit your needs. Just make sure to use the new name when calling the script.
+
 ## Configuration
 
 The script uses a configuration file located at `~/.journal_config`. You can set the following options:
@@ -103,11 +105,36 @@ journal
 
 ## Default Editor
 
-The default editor is set to `nvim` (Neovim). You can change this by using the `--set-editor` option or by editing the configuration file with the `--edit-config` option.
+The default editor is set to `nvim` (Neovim). You can change this to your preferred terminal-based text editor using the `--set-editor` option or by editing the configuration file with the `--edit-config` option. Some popular choices include:
+
+- `vim`: A highly configurable text editor built to enable efficient text editing
+- `nano`: A simple, user-friendly editor ideal for beginners
+- `emacs`: An extensible, customizable text editor—and more
+- `micro`: A modern and intuitive terminal-based text editor
+
+You can also use GUI-based editors that offer a command-line interface, such as:
+
+- `code`: Visual Studio Code (when the `code` command is set up)
+- `subl`: Sublime Text
+- `atom`: Atom editor
+
+To set your preferred editor, use:
+
+```
+journal --set-editor <editor-command>
+```
+
+Replace `<editor-command>` with the command you use to open your preferred editor from the terminal.
+
+Note: Ensure that your chosen editor is installed and accessible from the command line before setting it as your default journal editor.
 
 ## Compatibility
 
 This script is designed to work on macOS and other Unix-like operating systems. It has been tested on macOS and common Linux distributions. Windows users might be able to use it through WSL (Windows Subsystem for Linux), but this is not officially supported.
+
+## TODO
+
+- Add the ability to change the journal format and questions
 
 ## Contributing
 

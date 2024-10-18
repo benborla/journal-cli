@@ -8,15 +8,14 @@
 
 set -euo pipefail
 
-# Default Configuration
+# @INFO: Default Configuration
 DEFAULT_JOURNAL_DIR=~/journal
 DEFAULT_DATE_FORMAT="%m-%d-%Y"
 DEFAULT_EDITOR=vim
 
-# Configuration file
+# @INFO: Configuration file
 CONFIG_FILE=~/.journal_config
 
-# Function to load configuration
 load_config() {
   if [[ -f "$CONFIG_FILE" ]]; then
     source "$CONFIG_FILE"
@@ -27,7 +26,6 @@ load_config() {
   EDITOR=${EDITOR:-$DEFAULT_EDITOR}
 }
 
-# Function to save configuration
 save_config() {
   cat >"$CONFIG_FILE" <<EOF
 JOURNAL_DIR="$JOURNAL_DIR"
@@ -57,7 +55,6 @@ edit_config() {
   list_config
 }
 
-# Function to display usage information
 show_help() {
   cat <<EOF
 Usage: ${0##*/} [OPTIONS] [DATE]
@@ -88,12 +85,10 @@ Examples:
 EOF
 }
 
-# Function to display version information
 show_version() {
   echo "${0##*/} version 1.0.0"
 }
 
-# Function to get the date in the specified format
 get_date() {
   local input_date="$1"
   if [ -z "$input_date" ]; then
@@ -129,7 +124,6 @@ format_date_for_display() {
   fi
 }
 
-# Function to create a new journal entry
 create_journal_entry() {
   local journal_file="$1"
   local entry_date="$2"
@@ -196,7 +190,6 @@ add_filename_to_entry() {
   fi
 }
 
-# Function to list all journal entries
 list_entries() {
   printf "Journal entries in $JOURNAL_DIR:\n\n"
   local entry_count=0
@@ -304,5 +297,4 @@ main() {
   "$EDITOR" "$JOURNAL_FILE"
 }
 
-# Run the main function
 main "$@"
